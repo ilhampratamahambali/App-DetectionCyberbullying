@@ -5,8 +5,6 @@ from utils.helper import predict_text
 def run_ui(model, tfidf, encoder):
 
     st.set_page_config(page_title="Cyberbullying Detector", layout="centered")
-
-    # Load CSS
     with open("assets/style.css") as css:
         st.markdown(f"<style>{css.read()}</style>", unsafe_allow_html=True)
     try:
@@ -14,7 +12,7 @@ def run_ui(model, tfidf, encoder):
             img_b64 = base64.b64encode(img_f.read()).decode()
         img_src = f"data:image/png;base64,{img_b64}"
     except FileNotFoundError:
-        img_src = ""  # jika tidak ditemukan, biarkan kosong
+        img_src = ""  
 
     st.markdown(f"""
     <div class="header-container">
@@ -31,4 +29,5 @@ def run_ui(model, tfidf, encoder):
             st.warning("Masukkan teks terlebih dahulu!")
         else:
             hasil = predict_text(text, model, tfidf, encoder)
-            st.success(f"Hasil Prediksi: **{hasil}**")
+            formatted = hasil.replace("_", " ").title()
+            st.success(f"Cyberbullying - {formatted}")
