@@ -1,0 +1,52 @@
+/* Background */
+body {
+    background-color: #f7f7f7;
+}
+
+/* Header Container (Logo + Title) */
+.header-container {
+    display: flex;
+    align-items: center;      /* vertikal rapi */
+    justify-content: center;  /* posisinya center */
+    gap: 8px;                 /* jarak kecil */
+    margin-bottom: 10px;
+    margin-top: 15px;
+}
+
+/* Logo kecil */
+.header-container img {
+    width: 50px !important;
+    height: auto;
+    margin: 0;
+    padding: 0;
+}
+
+/* Title */
+.header-title {
+    color: #333333;
+    font-size: 1.9em;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+}
+
+/* Textarea */
+textarea {
+    background: #232020 !important;
+    border-radius: 10px !important;
+    padding: 12px !important;
+    font-size: 1rem !important;
+}
+
+/* Button */
+.stButton > button {
+    background-color: #4f46e5;
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+    padding: 10px 20px;
+}
+
+.stButton > button:hover {
+    background-color: #4338ca;
+}
